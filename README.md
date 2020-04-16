@@ -1,5 +1,7 @@
 # java-from-zero-to-hero :coffee:
 
+ENG [PL](https://github.com/mzlnk/java-from-zero-to-hero/edit/master/README_pl.md "Polish version")
+
 [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://shields.io/)
 [![Version: 0.0.1](https://img.shields.io/badge/version-0.0.1-brightgreen.svg)](https://shields.io/)
 [![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
@@ -18,24 +20,24 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
 ## What you can find here: :mag_right:
 
 - #### Pure Java stuff
-  - [ ] syntax
-  - [ ] classes ad objects
-  - [ ] inheritance
-  - [ ] interfaces
-  - [ ] Streams
-  - [ ] Optionals
-  - [ ] Reflection API
+  - [ ] [syntax](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/syntax "Java syntax")
+  - [ ] [classes ad objects](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/classes "classes")
+  - [ ] [inheritance](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/inheritance "inheritance")
+  - [ ] [interfaces](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/interfaces "interfaces")
+  - [ ] [Stream API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/streams "streams")
+  - [ ] [Optionals](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/optionals "optionals")
+  - [ ] [Reflection API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/reflection "reflection")
  
 - #### Maven
-  - [ ] how Maven works?
-  - [ ] first project with Maven
+  - [ ] [how Maven works?](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/maven "maven")
+  - [ ] [first project with Maven](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/maven "maven")
   
 - #### Testing your code
-  - [ ] JUnit 5
+  - [ ] [JUnit 5](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/testing/junit "junit 5")
 
 - #### useful libraries
-  - [ ] Project Lombok
-  - [ ] Gson
+  - [ ] [Project Lombok](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/useful_libraries/lombok "lombok")
+  - [ ] [Gson](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/useful_libraries/gson "gson")
   
 - #### Spring Boot framework
   - [ ] first steps with Spring Boot
