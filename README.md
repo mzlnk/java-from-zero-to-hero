@@ -23,7 +23,7 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
   - [ ] [inheritance](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/inheritance "inheritance")
   - [ ] [interfaces](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/interfaces "interfaces")
   - [ ] [Stream API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/streams "streams")
-  - [ ] [Optionals](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/optionals "optionals")
+  - [x] [Optionals](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/optionals "optionals")
   - [ ] [Reflection API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/reflection "reflection")
  
 - #### Maven
