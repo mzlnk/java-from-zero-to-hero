@@ -231,7 +231,7 @@ Now, we rewrite this method using Optionals:
 ```java
 public String getNameInUpperCase(Person person) {
   return Optional.ofNullable(person)
-    .map(person -> person.getName())
+    .map(p -> p.getName())
     .map(name -> name.toUpperCase())
     .orElse("");
 }
