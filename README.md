@@ -27,8 +27,8 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
   - [ ] [Reflection API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/reflection "reflection")
  
 - #### Maven
-  - [ ] [how Maven works?](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/maven "maven")
-  - [ ] [first project with Maven](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/maven "maven")
+  - [x] [how Maven works?](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/maven "maven")
+  - [x] [first project with Maven](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/maven/sample-project "maven")
   
 - #### Testing your code
   - [ ] [JUnit 5](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/testing/junit "junit 5")
