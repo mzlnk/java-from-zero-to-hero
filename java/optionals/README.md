@@ -245,6 +245,4 @@ Here we can easily inspect our code - line by line, because each of them is resp
 
 It's really hard to understand anything without practise and checking how it works on our own. Therefore, you can find here a project with a few examples of mentioned methods. Let's check it out!
 
-*Notice: examples are presented using unit tests made with JUnit 5 in project build with Maven
-
-
+*Notice: examples are presented using unit tests made with JUnit 5 in project build with Maven*
