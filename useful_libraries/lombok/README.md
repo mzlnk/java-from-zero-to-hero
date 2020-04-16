@@ -48,12 +48,12 @@ If you want to generate getters or setter for a field in your class, you have to
 ```java
 public class Person {
 
-  @Getter
-  private String name;
-  
-  @Getter
-  @Setter
-  private String surname;
+    @Getter
+    private String name;
+    
+    @Getter
+    @Setter
+    private String surname;
   
 }
 ```
@@ -71,9 +71,9 @@ We can also annotate whole class by `@Getter` or `@Setter` annotation and it wil
 ```java
 @Getter
 public class Person {
-
-  private String name;
-  private String surname;
+    
+    private String name;
+    private String surname;
   
 }
 ```
@@ -84,9 +84,9 @@ What's more, we can also determine the accesibilty of generated method. If we wa
 
 ```java
 public class Person {
-
-  @Getter(AccessLevel.PROTECTED)
-  private String name;
+    
+    @Getter(AccessLevel.PROTECTED)
+    private String name;
   
 }
 ```
@@ -111,8 +111,8 @@ The name of annotation has already told us where we can use it and how it works.
 @NoArgsConstructor
 public class Person {
 
-  private String name;
-  private String surname;
+    private String name;
+    private String surname;
   
 }
 ```
@@ -122,3 +122,52 @@ The code above will generate for us the no paramter constructor, so in other pla
 ```java
 Person person = new Person();
 ```
+
+
+#### `@AllArgsConstructor`:
+
+Second type of "constructor making" annotation is `@AllArgsConstructor`. If we use it in our class, Lombok generate constructor with the same amount of paramaters as amount of fields in the class. It means that we'll be able to set value to every field in the class by using this constructor.
+
+```java
+@AllArgsConstructor
+public class Person {
+
+    private String name;
+    private String surname;
+    
+}
+```
+ Then we will have access to the following constructor:
+ 
+ ```java
+ Person person = new Person("John", "Smiths");
+ ```
+ 
+ Where `"John"` will be set to field `name` and `"Smiths"` will be set to field `surname` in `Person` object.
+
+
+#### `@RequiredConstructor`
+
+Sometimes we will want to make kind of *factory* static method which allow us to create new instances of class. `@RequiredConstructor` is annotation which generate such a method. Let's see how it works.
+
+```java
+@RequiredConstructor(staticName = "of")
+public class Person {
+
+    @NonNull
+    private String name;
+    
+    private final String surname;
+    
+    private int age;
+    
+}
+```
+
+Then we'll be able to create new `Person` objects in following way:
+
+```java
+Person person = Person.of("John", "Smiths");
+```
+
+We can notice that not every field has its parameter in generated method. How it works? Really simple - only fields with final modifier or annotated as `@NonNull` will have its paramater in generated constructor by `@RequiredConstructor` annotation.
