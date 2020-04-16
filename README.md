@@ -1,7 +1,5 @@
 # java-from-zero-to-hero :coffee:
 
-ENG [PL](https://github.com/mzlnk/java-from-zero-to-hero/edit/master/README_pl.md "Polish version")
-
 [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://shields.io/)
 [![Version: 0.0.1](https://img.shields.io/badge/version-0.0.1-brightgreen.svg)](https://shields.io/)
 [![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
