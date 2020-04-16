@@ -1,4 +1,4 @@
-### Java optionals
+# Java optionals
 
 ## What are Optionals and why we should use them in project?
 
@@ -240,5 +240,11 @@ public String getNameInUpperCase(Person person) {
 Here we can easily inspect our code - line by line, because each of them is responsible for different step in accessing the final value. With Optional API we're sure that we won't get exception as map method converts our value if present or just returns empty optional. In the last step we want to get our value and by using orElse method we set default value if it obtains empty optional from previous map methods.
     
 
+
+## Bunch of examples
+
+It's really hard to understand anything without practise and checking how it works on our own. Therefore, you can find here a project with a few examples of mentioned methods. Let's check it out!
+
+*Notice: examples are presented using unit tests made with JUnit 5 in project build with Maven
 
 
