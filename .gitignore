@@ -25,3 +25,13 @@ hs_err_pid*
 # IntelliJ IDEA
 
 .idea/
+
+# project generated files:
+
+java/optionals/examples/.idea
+java/optionals/examples/target
+java/optionals/examples/out
+
+maven/sample-project/.idea
+maven/sample-project/target
+maven/sample-project/out
