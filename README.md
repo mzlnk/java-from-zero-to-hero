@@ -42,7 +42,7 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
   - [ ] [simple REST API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/spring/spring-rest-api "spring-rest-api")
   - [ ] [testing your code](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/spring/spring-testing "spring-testing")
   - [ ] [securing REST API with Spring Security](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/spring/spring-security "spring-security")
-  - [ ] [first steps with WebFlux(https://github.com/mzlnk/java-from-zero-to-hero/tree/master/spring/spring-webflux "spring-webflux")
+  - [ ] [first steps with WebFlux](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/spring/spring-webflux "spring-webflux")
   - [ ] [AOP with Spring Boot](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/spring/spring-aop "spring-aop")
    
 - #### good coding practises
