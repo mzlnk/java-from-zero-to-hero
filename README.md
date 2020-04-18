@@ -22,6 +22,7 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
   - [ ] [classes ad objects](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/classes "classes")
   - [ ] [inheritance](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/inheritance "inheritance")
   - [ ] [interfaces](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/interfaces "interfaces")
+  - [ ] [collections](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/collections "collections")
   - [ ] [Stream API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/streams "streams")
   - [x] [Optionals](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/optionals "optionals")
   - [ ] [Reflection API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/reflection "reflection")
@@ -34,7 +35,7 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
   - [ ] [JUnit 5](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/testing/junit "junit 5")
 
 - #### useful libraries
-  - [ ] [Project Lombok](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/useful_libraries/lombok "lombok")
+  - [x] [Project Lombok](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/useful_libraries/lombok "lombok")
   - [ ] [Gson](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/useful_libraries/gson "gson")
   
 - #### Spring Boot framework
