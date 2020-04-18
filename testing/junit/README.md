@@ -257,4 +257,135 @@ These are the most commonly used methods to test code in our project. However, J
 
 ### Preparing environment for testing
 
+As you can notice, in each of previous tests we had to explicitly create our `Calculator` instance. It's not the main purpose of the tests, so why not try to move this part of code into one method which will be invoked every time before test run?
 
+JUnit provides solution for such a problem - annotations: `@BeforeEach`, `@AfterEach`, `@BeforeAll` and `@AfterAll`.
+
+#### `@BeforeEach`
+
+Method annotated with `@BeforeEach` will be executed every time before each test. You have to remember that such *setup* method will be run only with test methods in the same class.
+
+#### `@AfterEach`
+
+Method annotated with `@AfterEach` will be executed every time after each test. You have to also remember - like with `@BeforeEach` method - that such *cleanup* method will be run only wih test methods in the same class.
+
+#### `@BeforeAll`
+
+Method annotated with `@BeforeAll` will be executed only once before all tests in the test class. That's why it must be `static`.
+
+#### `@AfterAll`
+
+Method annotated with `@AfterAll` will be executed - like the method annotated with `@BeforeAll` - only once after all tests in the test class. That's why it must also be `static`.
+
+Here are two simple examples:
+
+```java
+public class CalculatorTest {
+
+    private Calculator calculator;
+    
+    @BeforeEach
+    void setUp() {
+        calculator = new Calculator(0);
+    }
+    
+    @Test
+    void calculatorAddTest() {
+        calculator.add(5);
+        assertEquals(5, calculator.getValue());
+    }
+    
+    @Test
+    void calculatorSubtractTest() {
+        calculator.subtract(3);
+        assertEquals(-3, calculator.getValue());
+    }
+    
+}
+```
+
+```java
+public class FileTest {
+    
+    static File file;
+    static FileWriter fileWriter;
+    
+    @BeforeAll
+    static void setUp() {
+        // some setup here - creating temp file, etc.
+    }
+    
+    @AfterAll
+    static void cleanUp() {
+        // some cleanup here - closing writers, removing file, etc.
+    
+    @Test
+    void fileTest1() {
+        // test here...
+    }
+    
+    @Test
+    void fileTest2() {
+        // another test here...
+    }
+    
+}
+```
+
+---
+
+### Assumptions
+
+While writing tests we'll sometimes want to run some of them only in certain conditions - when we're in development mode, some files exist, etc.
+
+That's why JUnit provides some other helpful methods - `assumeTrue()` and `assumeFalse`. We place them in our test methods when we want to abort our test if certain conditions are met. 
+
+Here are two examples how we can use them:
+
+#### `assumeTrue()`
+
+The test will be aborted if condition passed as parameter **is not** `true`.
+
+```java
+@Test
+void calculatorDivideTest() {
+    assumeTrue(isInProperEnvironment()); // checking if test is run in proper environment
+    
+    calculator.divide(4);
+    assertEquals(2, calculator.getValue());
+}
+```
+
+In code above first of all we check if test is run in proper environment (we use specially prepared `isInProperEnvironment()` method which implementation is not important here).
+
+#### `assumeFalse()`
+
+The test will be aborted if condition passed as parameter **is not** `false`.
+
+```java
+@Test
+void fileCreateTest() {
+    assumeFalse(file.exists()); // checking if file we want to create not exist
+    
+    // creating file here...
+}
+```
+
+In code above we check if file we want to create doesn't exist. If exists we just abort our test.
+
+In both methods - `assumeTrue()` and `assumeFalse()` - we can make not only just an assumption. we can also provide a message (as a `String` or `Supplier<String>`) which should be returned to user if test will be aborted.
+
+```java
+assumeTrue(isInProperEnvironment(), "Test aborted: not proper environment");
+```
+
+```java
+assumeTrue(
+    isInProperEnvironment(),
+    () -> {
+        String message;
+        // obtain message here..
+        return message;
+    }
+);
+```
