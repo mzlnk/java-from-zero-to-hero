@@ -2,6 +2,8 @@
 
 Project Lombok is Java library which every developer should know. It helps us to avoid writing lots of code which is obviously neccessary in our projects but not the most important - like getters, setter, toString() methods and not only. What does it mean? It means than Lombok can do this stuff automatically and we don't have to write such basic methods on our own - we just tell Lombok where we need them. How? By simple annotations provided in API. Sounds interesting? Let's check out how it works!
 
+Link to Project Lombok website: [click here](https://projectlombok.org "project lombok")
+
 ---
 
 ### How to add Lombok to our project?
@@ -171,3 +173,68 @@ Person person = Person.of("John", "Smiths");
 ```
 
 We can notice that not every field has its parameter in generated method. How it works? Really simple - only fields with final modifier or annotated as `@NonNull` will have its paramater in generated constructor by `@RequiredConstructor` annotation.
+
+We can also notice that our `@ReuqiredConstructor` has its parameter - `staticName`. We can change name of our factory method using this paramater. In our case, we set this paramater to `of` and that's why Lombok generated static method `Person.of()` for us.
+
+---
+
+### toString() won't be any problem any more
+
+Project Lombok also provides `@ToString` annotation. If we add this annotation to our class, Lombok will generate the implementation of `toString()` method. By default, the string returned by this method consist of class name and all included fields.
+
+```java
+@ToString
+@AllArgsConstructor
+public class Person {
+
+    private String name;
+    private String surname;
+    
+}
+```
+
+Then, if we invoke `toString()` method on an instance of Person class we will give such an output (to the console, for example):
+
+```java
+Person person = new Person("John", "Smiths");
+System.out.println(person);
+```
+
+The result in the console:
+```text
+Person(name=John, surname=Smiths
+```
+
+#### `@ToString.Include`, `@ToString.Exclude`:
+
+We can also tell Lombok, which fields we want to include or exclude in our `toString()` method. This can be done by adding one of these annotations: `@ToString.Include` or `@ToString.Exclude`. Let's see, how it works:
+
+```java
+@ToString
+public class Person {
+
+    private String name;
+    private String surname;
+    
+    @ToString.Exclude
+    private String age;
+    
+}
+```
+
+The, if we invoke `toString()` method on an instance of `Person` class defined above, we'll get information about both `name` and `surname` values but the field `age` won't be visible.
+
+
+```java
+@ToString(onlyExplicitlyIncluded = true)
+public class Person {
+
+    @ToString.Include
+    private String name;
+    
+    private String surname;
+    private int age;
+}
+```
+
+Here, we defined another version of our `Person` class. However, now we tell Lombok, which fields 
