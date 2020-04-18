@@ -39,3 +39,7 @@ maven/sample-project/out
 java/collections/examples/.idea
 java/collections/examples/target
 java/collections/examples/out
+
+java/concurrency/examples/.idea
+java/concurrency/examples/target
+java/concurrency/examples/out
