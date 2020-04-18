@@ -569,7 +569,7 @@ This annotation provides empty argument to our test method. This *empty* argumen
 
 This annotation is just a shortcut/bundle of two previous annotations: `@NullSource` and `@EmptySource`
 
-#### Combining source
+#### Combining sources
 
 The `@ValueSource`, `@NullSource`, `@EmptySource` and `@NullAndEmptySource` can be combined with each other.
 
@@ -582,3 +582,112 @@ void someTest(String argument) {
 }
 ```
 
+#### `@EnumSource`
+
+We can also pass to our test method all enum constants by using `@EnumSource` annotation.
+
+```java
+@ParametrizedTest
+@EnumSource
+void fileTest(FileType fileType) {
+    // some tests here...
+}
+```
+
+The code above will pass all enum constants as argument. However, if we want to pass only some of them we can use `name` parameter.
+
+```java
+@ParametrizedTest
+@EnumSource(names = {"TXT", "CSV"})
+void fileTest(FileType fileType) {
+    // some tests here...
+}
+```
+
+*Notice: the `FileType.TXT` and `FileType.CSV` have to exist in enum `FileType`.*
+
+On the other hand, if we want to pass to our test mthod all enum constants except just one or two of them, we can set proper mode and declare which constant should be excluded.
+
+```java
+@ParametrizedTest
+@EnumSource(mode = EXCLUDE, names = {"JSON", "CSV"})
+void fileTest(FileType fileType) {
+    // some tests here...
+}
+```
+
+
+*Notice: the `FileType.JSON` and `FileType.CSV` have to exist in enum `FileType`.*
+
+#### `@MethodSource`
+
+If you search for a way to provide more flexible and more complex arguments you can use `@MethodSource`. This annotation allow you to refer to a method which provides arguments to your test method. Such a factory method should be `static` and return `Stream` of arguments.
+
+```java
+@ParametrizedTest
+@MethodSource("fileNamesProvider")
+void fileTest(String fileName) {
+    // some tests here...
+}
+
+static Stream<String> fileNamesProvider() {
+    return Stream.of("file-1.txt", "file-2.txt", "file-3.txt");
+}
+```
+
+If you want to create a test method with multiple arguments, we have to return form our factory method `Stream<Arguments>`. Let's see, how it works:
+
+```java
+@ParametrizedTest
+@MethodSource("fileProvider")
+void fileTest(String fileName, int lines) {
+    // some tests here...
+}
+
+static Stream<Argument> fileProvider() {
+    return Stream.of
+        arguments("file-1.txt", 398),
+        arguments("file-2.txt", 1029)
+    );
+}
+```
+
+The `arguments()` method is provided by JUnit and is used for creating `Argument` instances with passed as parameters values.
+
+Notice, that `Argument` is just a wrapper - we don't pass whole `Argument` as a paramter in our test method - JUnit will handle unwrapping it and invoke test method with proper values.
+
+#### More types of sources
+
+These are the most commonly used sources. However, there are some more which can be also helpful in writing tests in your project. You can read about them in JUnit docs [here](https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests)
+
+---
+
+### Setting timeout
+
+We can also declare a test, setup method, etc. which should automatically fail if its execution exceed certain amount of time. We can achieve it using `@Timeout` annotation.
+
+```java
+@Test
+@Timeout(10)
+void writeFileTest() {
+    // some tests here...
+}
+```
+
+The test from code above will automatically fail if its execution time will be longer than 5 seconds.
+
+If we want to set time in another time unit, we have to explicitly declare it - default time unit is `seconds`.
+
+```java
+@Test
+@Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
+void accessFileTest() {
+    // some tests here...
+}
+```
+
+---
+
+### More about JUnit!
+
+There are just basics of how to use JUnit in our projects and how to write tests. If you want to learn more about more advanced aspects of JUnit or more details about the mentioned methods and annotations - you can just [JUnit User Guide](https://junit.org/junit5/docs/current/user-guide/ "junit user guide") or [JUnit Java docs](https://junit.org/junit5/docs/current/api/ "junit java docs")
