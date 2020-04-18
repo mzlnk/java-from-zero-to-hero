@@ -19,10 +19,11 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
 
 - #### Pure Java stuff
   - [ ] [syntax](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/syntax "Java syntax")
-  - [ ] [classes ad objects](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/classes "classes")
+  - [ ] [classes and objects](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/classes "classes")
   - [ ] [inheritance](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/inheritance "inheritance")
   - [ ] [interfaces](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/interfaces "interfaces")
   - [ ] [collections](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/collections "collections")
+  - [ ] [concurrency](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/concurrency "concurrency")
   - [ ] [Stream API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/streams "streams")
   - [x] [Optionals](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/optionals "optionals")
   - [ ] [Reflection API](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/java/reflection "reflection")
@@ -32,7 +33,7 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
   - [x] [first project with Maven](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/maven/sample-project "maven")
   
 - #### Testing your code
-  - [ ] [JUnit 5](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/testing/junit "junit 5")
+  - [x] [JUnit 5](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/testing/junit "junit 5")
 
 - #### useful libraries
   - [x] [Project Lombok](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/useful_libraries/lombok "lombok")
@@ -47,7 +48,7 @@ Are you interested in Java? Do you want to learn it from scratch? Or maybe you'r
   - [ ] [AOP with Spring Boot](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/spring/spring-aop "spring-aop")
    
 - #### good coding practises
-  - [ ] design patterns
+  - [x] [design patterns](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns "design patterns")
   
 - #### Git
   - [ ] what is Git and why is so good?
