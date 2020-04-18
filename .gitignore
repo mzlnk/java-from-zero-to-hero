@@ -35,3 +35,7 @@ java/optionals/examples/out
 maven/sample-project/.idea
 maven/sample-project/target
 maven/sample-project/out
+
+java/collections/examples/.idea
+java/collections/examples/target
+java/collections/examples/out
