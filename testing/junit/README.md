@@ -92,6 +92,14 @@ public class HeroCalculator {
         return this;
     }
     
+    public boolean isNegative() {
+        return currentValue < 0;
+    }
+    
+    public boolean isPositive() {
+        return currentValue() > 0;
+    }
+    
     public int getValue() {
         return currentValue;
     }
@@ -119,3 +127,134 @@ Now you know how to create test classes. Let's learn how to write our tests!
 ---
 
 ### Writing first test
+
+The easiest way to show how the simple test look like is provide an example and discuss it. Therefore, let's see how such an example look like:
+
+```java
+class CalculatorTest {
+
+    @Test
+    void calculatorAddTest() {
+        Calculator calculator = new Calculator(2);
+        calculator.add(5);
+        
+        assertEquals(7, calculator.getValue());
+    }
+    
+}
+```
+
+First of all, we can see that all test methods are placed in tests classes and each of them are annotated with `@Test`. In test methods we can write like in normal method - using all features provided by Java and attached libraries.
+
+The last line our test method is really important and do the *test* stuff - `assertEquals()`. It's one of the method provided by JUnit. It checks if expected value (in our case: `7`) is equal to the actual one (in our case the result of adding 5 to 2 in calculator and got by invoking `calculator.getValue()`). If values are not equal the method throws `AssertionError` which will be handled by JUnit and we'll see the error with all details in the console.
+
+---
+
+### Useful methods to make assertions
+
+`assertEquals()` is not only one method we can use to test our code. JUnit provides plenty of them, so let's check some of them - how they look like and how they work.
+
+#### `assertNotEquals()`
+
+This method takes two paramaters - expected value and the actual one - and it just check if values are not equal (unlike the previous method - `assertEquals()`).
+
+```java
+@Test
+void calculatorAddTest() {
+    Calculator calculator = new Calculator(2);
+    calculator.add(2);
+    
+    assertNotEquals(3, calculator.getValue());
+}
+```
+
+#### `assertTrue()`
+
+This method checks if condition passed as a parameter is `true`.
+
+```java
+@Test
+void calculatorTest() {
+    Calculator calculator = new Calculator(5);
+    
+    assertTrue(calculator.isPositive());
+}
+```
+
+#### `assertFalse()`
+
+This method checks if condition passed as a parameter is `false`.
+
+```java
+@Test
+void calculatorTest() {
+    Calculator calculator = new Calculator(5);
+    
+    assertFalse(calculator.isNegative());
+}
+```
+
+#### `assertArrayEquals()`
+
+This method checks if two arrays passed as paramaters are equal.
+
+```java
+@Test
+void arrayTest() {
+    int[] array = new int[3] {5, 67, -4};
+    int[] anotherArray = new int[3] {5, 67, -4};
+    
+    assertArrayEquals(array, anotherArray);
+}
+```
+
+#### `assertNull()`
+
+This method checks if value is null.
+ 
+ ```java
+ @Test
+ void nullTest() {
+    String someString = null;
+    
+    assertNull(someString);
+}
+```
+
+#### `assertNotNull()`
+
+This method checks if value is not null.
+
+```java
+void notNullTest() {
+    String hero = "Java Hero!";
+    
+    assertNotNull(hero);
+}
+```
+
+#### `assertThrows()`
+
+This method takes two parameters. First argument is the type of the exception which should be thrown. The second one is `Runnable` action which we except throwing an exception.
+
+```java
+@Test
+void divisionTest() {
+    Calculator calculator = new Calculator(2);
+    
+    assertThrows(
+        RuntimeException.class, 
+        () -> calculator.divide(0) // we cannot divide by zero, so it should throw an exception
+    );
+}
+```
+
+#### more useful methods
+
+These are the most commonly used methods to test code in our project. However, JUnit provides some more of them. You can always check them out by reading JUnit Java Docs which you can find [here](https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html "junit docs - assertions")
+
+---
+
+### Preparing environment for testing
+
+
