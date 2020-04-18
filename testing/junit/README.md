@@ -389,3 +389,196 @@ assumeTrue(
     }
 );
 ```
+
+---
+
+### Disabling tests
+
+Sometimes, we may want to disable some previously written tests. We don't have to entirely remove them from our project or use comments. We can just use `@Disabled` annotation on test which we want to disable. We can also attach some message why the test is suspended.
+
+```java
+public class FileTest {
+
+    @Test
+    void test1() {
+        // some tests here...
+    }
+    
+    @Test
+    @Disabled("disabled due to ticket TF-903")
+    void test2() {
+        // some tests here...
+    }
+    
+}
+```
+
+---
+
+### Run tests on some conditions
+
+JUnit also provides some annotations which we can use if we want to run some tests in specific environment (like Windows or Mac) or on specific Java version. Here are mentioned annotations:
+
+* `@DisabledOnOs`
+* `@EnabledOnOs`
+* `@DisabledOnJre`
+* `@EnabledOnJre`
+* `@DisabledForJreRange`
+* `@EnabledForJreRange`
+
+Here are some examples:
+
+```java
+public class FileTest {
+
+    @Test
+    @EnabledOnOs(MAC)
+    void fileTestOnlyForMac() {
+        // some tests here...
+    }
+    
+    @Test
+    @DisabledOnJre(JAVA_11)
+    void fileTestDisabledForJava11() {
+        // some tests here...
+    }
+    
+    @Test
+    @EnabledForJreRange(min = JAVA_8, max = JAVA_13)
+    void fileTestForJava8To13() {
+        // some tests here...
+    }
+    
+}
+```
+
+---
+
+### Give some names to our tests
+
+If we have lots of tests in our project, it's good idea to attach some names to them - to make running test clearer and know which test had been run. We can name our test method or even whole test class using `@DisplayName` annotation.
+
+```java
+@DisplayName("file tests")
+public class FileTest {
+
+    @Test
+    @DisplayName("accessing file test")
+    void accessFileTest() {
+        // some tests here...
+    }
+    
+}
+```
+
+---
+
+### Repeating tests
+
+If we want to repeat some test multiple times we can do it by replacing our `@Test` annotation with `@RepeatedTest` one.
+
+```java
+public class FileTest {
+
+    @RepeatedTest(5) // this set will be run 5 times
+    void fileTest1() {
+        // some tests here...
+    }
+    
+    @RepeatedTest(value = 10, name = "Test: {displayName} -> repetition {currentRepetition} of {totalRepetitions}")
+    @DisplayName("write to file test")
+    void writeToFileTest() {
+        // some tests here...
+    }
+    
+}
+```
+
+You can notice that first test will be run 5 times - it's really intuitional. However, you can be quite confused about the second test. Let's check how it's built.
+
+* `value` - this is amount of test repetitions
+* `name` - this is the name of every repeated test shown in the console while running tests
+    * `{displayName}` - this part will be replaced with the name set in `@DisplayName`
+    * `{currentRepetition}` - current repetition of the test
+    * `{totalRepetitions}` - total amount of repetition (set in `value`)
+    
+The form of `name` parameter is totaly your choice - you can use all of placeholders in different order, part or none of them, etc.
+
+---
+
+### Parametrized tests
+
+Parametrized tests are just regular tests but we can provide different arguments to it so the test will run multiple times with different provided argument. To create parametrized test we have to use `@ParametrizedTest` instead of `@Test` annotation.
+
+```java
+@ParametrizedTest
+@ValueSource(ints = { 5, -3, 72, 11 })
+void calculatorAddTest(int value) {
+   calculator.add(value); // previosuly calculator initiated with 0
+   
+   assertEquals(value, calculator.getValue());
+}
+```
+
+Apart from annotating test method with `@ParametrizedTest` we had to provide source of argument. There are some way to provide such source - one of them is `@ValueSource`.
+
+#### `@ValueSource`
+
+`@ValueSource` is one of the basic and simplest value sources available in JUnit. You can specify a single array with value which you want to pass to test method. However you cannot provide any type you want.
+
+There are all types supported by `@ValueSource`:
+* `short`
+* `byte`
+* `int`
+* `long`
+* `float`
+* `double`
+* `char`
+* `boolean`
+* `String`
+* `Class`
+
+You can use them as a parameter in `@ValueSource` in the same as in previous example - e.g. for String the annotation might look like this one:
+```java
+@ValueSource(strings = {"a", "b", "c")
+```
+
+#### `@NullSource`
+
+This annotation provide a single `null` value as an argument to our test method. *Notice: this annotation cannot be used for arguments with primitive data types.*
+
+```java
+@ParametrizedTest
+@NullSource
+void checkNullTest(String argument) {
+    // some tests here...
+}
+```
+
+#### `@EmptySource`
+
+This annotation provides empty argument to our test method. This *empty* argument can be one of the following types:
+* `String`
+* `List`
+* `Set`
+* `Map`
+* primitive arrays (e.g. `int[]`)
+* object arrays (e.g. `String[]`)
+
+#### `@NullAndEmptySource`
+
+This annotation is just a shortcut/bundle of two previous annotations: `@NullSource` and `@EmptySource`
+
+#### Combining source
+
+The `@ValueSource`, `@NullSource`, `@EmptySource` and `@NullAndEmptySource` can be combined with each other.
+
+```java
+@ParametrizedTest
+@ValueSource(strings = "a", "b", "c")
+@EmptySource
+void someTest(String argument) {
+    // some tests here...
+}
+```
+
