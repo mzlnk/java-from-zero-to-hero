@@ -1,4 +1,4 @@
-package shape;
+package factory.shape;
 
 public class ShapeFactory {
 

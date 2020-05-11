@@ -1,4 +1,4 @@
-package shape;
+package factory.shape;
 
 class Triangle implements Shape {
 

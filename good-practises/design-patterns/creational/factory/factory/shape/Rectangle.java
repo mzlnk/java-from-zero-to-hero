@@ -1,4 +1,4 @@
-package shape;
+package factory.shape;
 
 class Rectangle implements Shape {
 

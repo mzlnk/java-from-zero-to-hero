@@ -1,5 +1,5 @@
-import shape.Shape;
-import shape.ShapeFactory;
+import factory.shape.Shape;
+import factory.shape.ShapeFactory;
 
 public class FactoryTest {
 
