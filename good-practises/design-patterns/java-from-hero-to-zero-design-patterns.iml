@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/behavioral/mediator" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/behavioral/observer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/behavioral/strategy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/behavioral/template" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/creational/abstractfactory" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/creational/builder" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/creational/factory" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/creational/singleton" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/creational/prototype" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/structural/adapter" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/structural/proxy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/structural/flyweight" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/structural/facade" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/structural/decorator" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/structural/composite" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

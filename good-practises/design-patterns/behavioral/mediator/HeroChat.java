@@ -1,4 +1,5 @@
-package pl.mzlnk.javafromzerotohero.designpatterns.behavioral.mediator;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HeroChat implements Chat {
 
@@ -14,7 +15,7 @@ public class HeroChat implements Chat {
         this.users
                 .stream()
                 .filter(u -> u != user)
-                .forEach(u -> u.receiveMessage(user));
+                .forEach(u -> u.receiveMessage(message));
     }
 
 }
