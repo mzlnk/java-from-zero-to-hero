@@ -1,3 +1,5 @@
+package behavioral.mediator;
+
 public abstract class BaseUser implements User {
 
     private Chat chat;

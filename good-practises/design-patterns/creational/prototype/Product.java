@@ -1,3 +1,5 @@
+package creational.prototype;
+
 import java.util.UUID;
 
 public class Product implements Cloneable {

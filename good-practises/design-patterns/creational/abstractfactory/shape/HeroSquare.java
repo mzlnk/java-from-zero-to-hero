@@ -1,4 +1,4 @@
-package abstractfactory.shape;
+package creational.abstractfactory.shape;
 
 class HeroSquare implements Shape {
 

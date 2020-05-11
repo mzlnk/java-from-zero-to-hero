@@ -1,3 +1,5 @@
+package structural.decorator;
+
 public class GarageHouse extends HouseDecorator {
 
     public GarageHouse(House house) {

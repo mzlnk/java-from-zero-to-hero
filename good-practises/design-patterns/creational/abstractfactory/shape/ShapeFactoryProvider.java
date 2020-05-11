@@ -1,4 +1,4 @@
-package abstractfactory.shape;
+package creational.abstractfactory.shape;
 
 import java.util.EnumMap;
 import java.util.Map;

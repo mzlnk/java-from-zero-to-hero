@@ -1,4 +1,6 @@
-package documenttemplate;
+package structural.flyweight.documenttemplate;
+
+import structural.flyweight.Document;
 
 public interface DocumentTemplate {
 

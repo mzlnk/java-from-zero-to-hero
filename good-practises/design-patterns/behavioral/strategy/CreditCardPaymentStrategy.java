@@ -1,3 +1,5 @@
+package behavioral.strategy;
+
 public class CreditCardPaymentStrategy implements PaymentStrategy {
 
     private String cardNumber;

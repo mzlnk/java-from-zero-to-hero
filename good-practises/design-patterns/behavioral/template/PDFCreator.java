@@ -1,3 +1,5 @@
+package behavioral.template;
+
 public class PDFCreator extends DocumentCreator {
 
     public PDFCreator(String header, String body) {

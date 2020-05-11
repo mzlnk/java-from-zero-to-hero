@@ -1,3 +1,5 @@
+package creational.singleton;
+
 public class HeroSingleton {
 
     public static HeroSingleton getInstance() {

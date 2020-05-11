@@ -1,4 +1,4 @@
-package abstractfactory.shape;
+package creational.abstractfactory.shape;
 
 public interface ShapeFactory {
 

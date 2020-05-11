@@ -1,3 +1,5 @@
+package behavioral.template;
+
 public class DocxCreator extends DocumentCreator {
 
     public DocxCreator(String header, String body) {

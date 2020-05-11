@@ -1,3 +1,5 @@
+package behavioral.observer;
+
 public class Dashboard implements AnnouncementObserver {
 
     private String name;

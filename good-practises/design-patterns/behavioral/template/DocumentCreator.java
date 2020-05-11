@@ -1,3 +1,5 @@
+package behavioral.template;
+
 public abstract class DocumentCreator {
 
     private String header;

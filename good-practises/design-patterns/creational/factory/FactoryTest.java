@@ -1,5 +1,7 @@
-import factory.shape.Shape;
-import factory.shape.ShapeFactory;
+package creational.factory;
+
+import creational.factory.shape.Shape;
+import creational.factory.shape.ShapeFactory;
 
 public class FactoryTest {
 

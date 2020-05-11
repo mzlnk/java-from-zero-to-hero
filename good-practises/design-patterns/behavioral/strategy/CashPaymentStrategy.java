@@ -1,3 +1,5 @@
+package behavioral.strategy;
+
 public class CashPaymentStrategy implements PaymentStrategy {
 
     @Override

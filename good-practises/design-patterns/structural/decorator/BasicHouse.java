@@ -1,3 +1,5 @@
+package structural.decorator;
+
 public class BasicHouse implements House {
 
     @Override

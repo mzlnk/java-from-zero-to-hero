@@ -1,3 +1,5 @@
+package behavioral.strategy;
+
 import java.util.UUID;
 
 public class Invoice {

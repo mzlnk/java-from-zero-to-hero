@@ -1,4 +1,4 @@
-package factory.shape;
+package creational.factory.shape;
 
 public interface Shape {
 

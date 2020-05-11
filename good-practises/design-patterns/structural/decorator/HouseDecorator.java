@@ -1,3 +1,5 @@
+package structural.decorator;
+
 public abstract class HouseDecorator implements House {
 
     protected House house;

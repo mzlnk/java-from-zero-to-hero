@@ -1,8 +1,8 @@
-package documenttemplate;
+package structural.flyweight.documenttemplate;
+
+import structural.flyweight.Document;
 
 public class DocxTemplate implements DocumentTemplate {
-
-    public DocxTemplate
 
     @Override
     public void create(Document document) {

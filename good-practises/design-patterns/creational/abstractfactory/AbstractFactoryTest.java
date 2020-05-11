@@ -1,6 +1,8 @@
-import abstractfactory.shape.Shape;
-import abstractfactory.shape.ShapeFactory;
-import abstractfactory.shape.ShapeFactoryProvider;
+package creational.abstractfactory;
+
+import creational.abstractfactory.shape.Shape;
+import creational.abstractfactory.shape.ShapeFactory;
+import creational.abstractfactory.shape.ShapeFactoryProvider;
 
 public class AbstractFactoryTest {
 

@@ -1,3 +1,5 @@
+package creational.singleton;
+
 public class AnotherHeroSingleton {
 
     private static AnotherHeroSingleton INSTANCE;

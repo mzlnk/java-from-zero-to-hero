@@ -1,3 +1,5 @@
+package behavioral.mediator;
+
 public class Guest extends BaseUser {
 
     public Guest(Chat chat, String username) {
