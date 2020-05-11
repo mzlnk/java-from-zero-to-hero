@@ -48,7 +48,7 @@ Using Lombok is so simple and intuitive. Whole concept is based on using annotat
 If you want to generate getters or setter for a field in your class, you have to just add `@Getter` or `@Setter` annotation next to this field.
 
 ```java
-public class Person {
+public class Address {
 
     @Getter
     private String name;
@@ -60,7 +60,7 @@ public class Person {
 }
 ```
 
-The code above will generate in our `Person` class the following methods: `getName()`, `getSurname()` and `setSurname(String surname)`.
+The code above will generate in our `Address` class the following methods: `getName()`, `getSurname()` and `setSurname(String surname)`.
 
 The naming convetion of generated methods is really simple:
 
@@ -72,7 +72,7 @@ We can also annotate whole class by `@Getter` or `@Setter` annotation and it wil
 
 ```java
 @Getter
-public class Person {
+public class Address {
     
     private String name;
     private String surname;
@@ -85,7 +85,7 @@ Both `name` and `surname` fields will have generated both setters and getters in
 What's more, we can also determine the accesibilty of generated method. If we want e.g. protected access getter, we need to add just `AccessLevel` parameter to our annotation.
 
 ```java
-public class Person {
+public class Address {
     
     @Getter(AccessLevel.PROTECTED)
     private String name;
@@ -111,7 +111,7 @@ The name of annotation has already told us where we can use it and how it works.
 
 ```java
 @NoArgsConstructor
-public class Person {
+public class Address {
 
     private String name;
     private String surname;
@@ -122,7 +122,7 @@ public class Person {
 The code above will generate for us the no paramter constructor, so in other place in our project we'll be able to use it in the following way:
 
 ```java
-Person person = new Person();
+Address person = new Address();
 ```
 
 
@@ -132,7 +132,7 @@ Second type of "constructor making" annotation is `@AllArgsConstructor`. If we u
 
 ```java
 @AllArgsConstructor
-public class Person {
+public class Address {
 
     private String name;
     private String surname;
@@ -142,10 +142,10 @@ public class Person {
  Then we will have access to the following constructor:
  
  ```java
- Person person = new Person("John", "Smiths");
+ Address person = new Address("John", "Smiths");
  ```
  
- Where `"John"` will be set to field `name` and `"Smiths"` will be set to field `surname` in `Person` object.
+ Where `"John"` will be set to field `name` and `"Smiths"` will be set to field `surname` in `Address` object.
 
 
 #### `@RequiredConstructor`
@@ -154,7 +154,7 @@ Sometimes we will want to make kind of *factory* static method which allow us to
 
 ```java
 @RequiredConstructor(staticName = "of")
-public class Person {
+public class Address {
 
     @NonNull
     private String name;
@@ -166,15 +166,15 @@ public class Person {
 }
 ```
 
-Then we'll be able to create new `Person` objects in following way:
+Then we'll be able to create new `Address` objects in following way:
 
 ```java
-Person person = Person.of("John", "Smiths");
+Address person = Address.of("John", "Smiths");
 ```
 
 We can notice that not every field has its parameter in generated method. How it works? Really simple - only fields with final modifier or annotated as `@NonNull` will have its paramater in generated constructor by `@RequiredConstructor` annotation.
 
-We can also notice that our `@ReuqiredConstructor` has its parameter - `staticName`. We can change name of our factory method using this paramater. In our case, we set this paramater to `of` and that's why Lombok generated static method `Person.of()` for us.
+We can also notice that our `@ReuqiredConstructor` has its parameter - `staticName`. We can change name of our factory method using this paramater. In our case, we set this paramater to `of` and that's why Lombok generated static method `Address.of()` for us.
 
 ---
 
@@ -185,7 +185,7 @@ Project Lombok also provides `@ToString` annotation. If we add this annotation t
 ```java
 @ToString
 @AllArgsConstructor
-public class Person {
+public class Address {
 
     private String name;
     private String surname;
@@ -193,16 +193,16 @@ public class Person {
 }
 ```
 
-Then, if we invoke `toString()` method on an instance of Person class we will give such an output (to the console, for example):
+Then, if we invoke `toString()` method on an instance of Address class we will give such an output (to the console, for example):
 
 ```java
-Person person = new Person("John", "Smiths");
+Address person = new Address("John", "Smiths");
 System.out.println(person);
 ```
 
 The result in the console:
 ```text
-Person(name=John, surname=Smiths
+Address(name=John, surname=Smiths
 ```
 
 #### `@ToString.Include`, `@ToString.Exclude`:
@@ -211,7 +211,7 @@ We can also tell Lombok, which fields we want to include or exclude in our `toSt
 
 ```java
 @ToString
-public class Person {
+public class Address {
 
     private String name;
     private String surname;
@@ -222,12 +222,12 @@ public class Person {
 }
 ```
 
-The, if we invoke `toString()` method on an instance of `Person` class defined above, we'll get information about both `name` and `surname` values but the field `age` won't be visible.
+The, if we invoke `toString()` method on an instance of `Address` class defined above, we'll get information about both `name` and `surname` values but the field `age` won't be visible.
 
 
 ```java
 @ToString(onlyExplicitlyIncluded = true)
-public class Person {
+public class Address {
 
     @ToString.Include
     private String name;
@@ -237,7 +237,7 @@ public class Person {
 }
 ```
 
-Here, we defined another version of our `Person` class. However, now we tell Lombok, which fields should be included - using `@ToString.Include` annotation. We can also notice that we have to add additional parameter to our `@ToString` annotation - `onlyExplicitlyIncluded` and set it to `true`. It is important cause we want to explicitly include some fields.
+Here, we defined another version of our `Address` class. However, now we tell Lombok, which fields should be included - using `@ToString.Include` annotation. We can also notice that we have to add additional parameter to our `@ToString` annotation - `onlyExplicitlyIncluded` and set it to `true`. It is important cause we want to explicitly include some fields.
 
 ---
 
@@ -247,7 +247,7 @@ Lombok provides another useful annotation: `@EqualsAndHashCode`. It generates in
 
 ```java
 @EqualsAndHashCode
-public class Person {
+public class Address {
 
     private String name;
     private String surname;
@@ -255,7 +255,7 @@ public class Person {
 }
 ```
 
-Then, if we invoke `equals()` method to compare two instances of `Person` class, the generated by Lombok implementation of the method will check if both objects has the same type, etc. (like the default implementation pattern which can be found in tutorial, docs, etc.). Apart from the default checks, `equals()` method will also check if fields `name` and `surname` are equal.
+Then, if we invoke `equals()` method to compare two instances of `Address` class, the generated by Lombok implementation of the method will check if both objects has the same type, etc. (like the default implementation pattern which can be found in tutorial, docs, etc.). Apart from the default checks, `equals()` method will also check if fields `name` and `surname` are equal.
 
 On the other hand, when we invoke `hashCode()` method, we will get hash based on values stored in fields in our class - in this case: in fields `name` and `surname`. The generated by Lombok implementation also refers to good practises in creating proper `hashCode()` method implementation - it's based on calculation on primary numbers;
 
@@ -263,7 +263,7 @@ If we don't want to include some fields to checking in `equals()` or `hashCode()
 
 ```java
 @EqualsAndHashCode
-public class Person {
+public class Address {
 
     private String name;
     private String surname;
@@ -278,7 +278,7 @@ Notice: if we want to explicitly include some fields, we have to do the same thi
 
 ```java
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Person {
+public class Address {
 
     @EqualsAndHashCode.Include
     private String name;
@@ -301,7 +301,7 @@ So, let's move straight forward to our example how `@Builder` annotation works:
 
 ```java
 @Builder
-public class Person {
+public class Address {
 
     private String name;
     private String surname;
@@ -310,10 +310,10 @@ public class Person {
 }
 ```
 
-Then, if we want to create an instance of our `Person` class, we can use generated by Lombok `PersonBuilder` inner class.
+Then, if we want to create an instance of our `Address` class, we can use generated by Lombok `PersonBuilder` inner class.
 
 ```java
-Person person = Person.builder()
+Address person = Address.builder()
     .name("John")
     .surname("Smiths")
     .age(25)

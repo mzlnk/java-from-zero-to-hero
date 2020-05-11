@@ -193,15 +193,15 @@ anotherHeroOptional
 
 One of the big advantages of using Optionals is easy mapping our value to another without checking explicitly if value is present. To understand how it works and why is much better than without using Optionals, let's check following example.
 
-Assume, that we have simple class `Person` with two fields: `name` and `surname`. Both fields can be null.
+Assume, that we have simple class `Address` with two fields: `name` and `surname`. Both fields can be null.
 
 ```java
-public class Person {
+public class Address {
 
   private String name;
   private String surname;
   
-  public Person(String name, String surname) {
+  public Address(String name, String surname) {
     this.name = name;
     this.surname = surname;
   }
@@ -217,12 +217,12 @@ public class Person {
 }
 ```
 
-Now, we want to create a method which gets an `Person` instance and returns name in upper case or return empty string if values are not present. What's really importnant here: we have to check if object given as a parameter is non-null value and then if name is also non-null. Otherwise, we'll get NullPointerException if we perform some action on them.
+Now, we want to create a method which gets an `Address` instance and returns name in upper case or return empty string if values are not present. What's really importnant here: we have to check if object given as a parameter is non-null value and then if name is also non-null. Otherwise, we'll get NullPointerException if we perform some action on them.
 
 Let's check how such method would look like without using Optionals.
 
 ```java
-public String getNameInUpperCase(Person person) {
+public String getNameInUpperCase(Address person) {
   if (person != null && person.getName() != null) {
     return person.getName().toUpperCase();
   } else {
@@ -236,7 +236,7 @@ We can notice this awful `if` statement. In this example it isn't so bad but ima
 Now, we rewrite this method using Optionals:
 
 ```java
-public String getNameInUpperCase(Person person) {
+public String getNameInUpperCase(Address person) {
   return Optional.ofNullable(person)
     .map(p -> p.getName())
     .map(name -> name.toUpperCase())
