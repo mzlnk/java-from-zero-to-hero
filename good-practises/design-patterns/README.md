@@ -16,9 +16,9 @@
   * [x] [Singleton](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/creational/singleton "singleton")
   
 * **Structural design patterns:**
-  * [ ] [Adapter](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/adapter "adapter")
-  * [ ] [Composite](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/composite "composite")
-  * [ ] [Decorator](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/decorator "decorator")
-  * [ ] [Facade](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/facade "facade")
-  * [ ] [Flyweight](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/flyweight "flyweight")
-  * [ ] [Proxy](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/proxy "proxy")
+  * [x] [Adapter](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/adapter "adapter")
+  * [x] [Composite](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/composite "composite")
+  * [x] [Decorator](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/decorator "decorator")
+  * [x] [Facade](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/facade "facade")
+  * [x] [Flyweight](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/flyweight "flyweight")
+  * [x] [Proxy](https://github.com/mzlnk/java-from-zero-to-hero/tree/master/good-practises/design-patterns/structural/proxy "proxy")
